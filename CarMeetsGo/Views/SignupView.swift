@@ -1,7 +1,8 @@
 import SwiftUI
+import Foundation
 
 struct SignupView: View {
-    @StateObject var authVM = AuthViewModels()
+    @ObservedObject var authVM: AuthViewModels
     @State var email: String = ""
     @State var password: String = ""
 
@@ -20,7 +21,7 @@ struct SignupView: View {
             }
             .padding()
 
-            Button("Sign In") {
+            Button("Login") {
                 authVM.signIn(email: email, password: password)
             }
             .padding()
